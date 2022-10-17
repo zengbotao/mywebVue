@@ -37,9 +37,9 @@
 <script lang="ts" setup>
 import axios from "axios";
 import { ref } from "vue";
-const title = ref("");
-const content = ref("");
-const list = ref([]);
+const title = ref(""); //去掉申明类型，让ts给默认的类型
+const content = ref("dsd");
+const list: any = ref([]);
 const pageindex = ref(1);
 const add = () => {
   // if (title.value.trim() === "" || content.value.trim() === "")
@@ -77,7 +77,7 @@ const prevPage = () => {
   getNewsList();
 };
 // 删除新闻
-const remove = (id) => {
+const remove = (id: Number) => {
   // console.log(id);
   axios
     .post("/api/delete/news", {
