@@ -1,31 +1,48 @@
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div id="app">
+    <router-view/>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
+<script>
+import { reactive, toRefs } from 'vue'
+import { useRouter } from 'vue-router'
+  export default {
+    setup() {
+      const router = useRouter()
+      const state = reactive({
+        transitionName: 'slide-left'
+      })
+
+      return {
+        ...toRefs(state)
+      }
+    }
+  }
+</script>
+
+<style lang="less">
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+#app {
+  height: 100%;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // text-align: center;
+  color: #2c3e50;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.router-view{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: 0 auto;
+    -webkit-overflow-scrolling: touch;
 }
 </style>
