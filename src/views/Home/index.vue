@@ -1,12 +1,6 @@
 <template>
   <div class="content-home">
-    <div class="content-right">
-      <div>
-        <Tips /> 
-        <Tips title="相关内容"/>
-        <Tips title="推荐内容"/>
-      </div>
-    </div>
+    <Silder class="silder-left" />
     <div class="content-main">
       <Content></Content>
       <Content></Content>
@@ -25,13 +19,7 @@
       <div></div>
     </div>
 
-    <div class="content-right">
-      <div>
-        <Tips  /> 
-        <Tips title="相关内容"/>
-        <Tips title="推荐内容"/>
-      </div>
-    </div>
+   <Silder class="silder-right"/>
   </div>
 </template>
 
@@ -39,9 +27,10 @@
 import { reactive, toRefs, onMounted, computed } from "vue";
 import Content from "./content.vue";
 import Tips from "@/components/tips.vue"
+import Silder from "@/components/silder/index.vue"
 import { useRouter } from "vue-router";
 export default {
-  components: { Content,Tips},
+  components: { Content,Tips,Silder},
   setup() {
     // onMounted(console.log(router));
     // const router = useRouter();
@@ -62,14 +51,20 @@ export default {
 <style lang="less" scoped>
 .content-home {
   display: flex;
+  padding: 0 270px;
   .content-main {
     flex: 1;
     margin: 12px 0;
   }
-  .content-right {
-    width: 260px;
-    padding: 5px;
-  
+  .silder-right{
+    position: fixed;
+    top:64px;
+    right: 240px;
+  }
+  .silder-left{
+    position: fixed;
+    top:64px;
+    left: 240px;
   }
 }
 </style>

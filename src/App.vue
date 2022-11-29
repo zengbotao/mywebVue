@@ -1,10 +1,9 @@
 <template>
   <div id="app">
-    <div class="content">
-      <Header></Header>    
-      <router-view />      
+
+      <Header class="headers"></Header>    
+      <router-view  class="viewers"/>      
       <Footer></Footer>
-    </div>
   </div>
 </template>
 
@@ -43,13 +42,18 @@ export default {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   color: #010b14;
   padding: 0 240px;
-  display: flex;
-  flex-direction: row;
-  .content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+ 
+  .headers{
+    background-color: @Gbgc-color;
+    z-index: 1001;
+    position: fixed;
+    top:0px;
 
+  }
+  .viewers{
+    padding-top: 60px;
+    min-height: 761px;
+    overflow-y: auto;
   }
 }
 </style>

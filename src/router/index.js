@@ -17,9 +17,9 @@ const router = createRouter({
     },
     ...defaultRoutes,
     {
-      path: '/category',
-      name: 'category',
-      component: () => import(/* webpackChunkName: "about" */ '@/views/Home/index.vue'),
+      path: '/publish',
+      name: 'publish',
+      component: () => import(/* webpackChunkName: "about" */ '@/views/publish/index.vue'),
       meta: {
         index: 2
       }
