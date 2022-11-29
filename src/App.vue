@@ -115,6 +115,7 @@ export default {
     height: 600px;
   }
   .content {
+    flex: 1;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -158,18 +159,12 @@ export default {
       }
     }
     .headers {
-      position: fixed;
-      left: 240px;
-      top:0;
       display: flex;
-      flex-direction: row;
       align-items: center;
-      // justify-content: space-between;
+      justify-content: space-between;
       height: 60px;
-      width: 100%;
       border-bottom: 1px solid transparent;
       border-color: #f0f0f0;
-      background-color:@Gbgc-color;
       .titlePic {
         width: 120px;
         height: 60px;
