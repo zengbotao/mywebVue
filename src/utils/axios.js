@@ -1,12 +1,12 @@
 
 
-// import { Loading, Message, Notification } from 'element-ui';
-import Axios from 'axios';
-import router from '../router';
-import store from '../store'
-export  const request = Axios.create({
-    baseURL: "/api"
-});
+// // import { Loading, Message, Notification } from 'element-ui';
+// import Axios from 'axios';
+// import router from '../router';
+// import store from '../store'
+// export  const request = Axios.create({
+//     baseURL: "/api"
+// });
 
 
 
@@ -83,4 +83,4 @@ export  const request = Axios.create({
 //     return promise.then(data => [data, undefined])
 //         .catch(err => [undefined, err]);
 // }
-export  default request;
+// export  default request;
