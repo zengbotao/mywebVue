@@ -4,6 +4,7 @@ import vue from "@vitejs/plugin-vue"; //下载，导入扩展，并配置插件�
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
+import requireTransform from 'vite-plugin-require-transform';
 export default defineConfig({
   base: "./", //记得修改index.heml,路径设置为当前路径
   plugins: [
@@ -14,7 +15,22 @@ export default defineConfig({
     Components({
       resolvers: [ElementPlusResolver()],
     }),
+    requireTransform({
+      fileRegex: /.js$|.vue$/
+  })
   ],
+  css: {
+    modules: {
+      localsConvention: "camelCaseOnly", // 修改生成的配置对象的key的展示形式(驼峰还是中划线形式)
+      scopeBehaviour: "local", 
+      hashPrefix: "ailiwen", 
+    },
+    preprocessorOptions: { //vite项目配置less全局样式
+      less: {
+        additionalData: '@import "../src/common/style/globle.less";',
+      },
+    },
+  },
   resolve: {
     alias: {
       // 打包相关能尽量给绝对路径,就给绝对

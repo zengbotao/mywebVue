@@ -8,10 +8,15 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.0.10",
     "axios": "^0.20.0",
     "element-plus": "^2.2.25",
+    "img-vuer3": "^1.0.2",
+    "pdfjs-dist": "^3.1.81",
     "vue": "3.2.25",
+    "vue-pdf-embed": "^1.1.5",
     "vue-router": "^4.0.0-beta.13",
+    "vue3-pdfjs": "^0.1.6",
     "vuex": "^4.0.0-beta.4"
   },
   "devDependencies": {
@@ -23,11 +28,13 @@
     "babel-plugin-import": "^1.13.1",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0-0",
+    "file-loader": "^6.2.0",
     "less": "^3.12.2",
     "less-loader": "^7.0.2",
     "unplugin-auto-import": "^0.12.0",
     "unplugin-vue-components": "^0.22.11",
-    "vite": "^3.1.8"
+    "vite": "^3.1.8",
+    "vite-plugin-require-transform": "^1.0.4"
   },
   "browserslist": [
     "> 1%",
