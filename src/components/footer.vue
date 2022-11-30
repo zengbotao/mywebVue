@@ -18,12 +18,6 @@
               >浙ICP备2022033261号-1</a
             >
             &nbsp; &nbsp;
-            <el-avatar
-              class="guohui"
-              shape="circle"
-              :size="20"
-              :src="squareUrl"
-            />
             <a class="aa" href="http://beian.miit.gov.cn" target="_blank">
               浙公网安备 33011002016834号</a
             >
@@ -42,9 +36,6 @@
         transitionName: "slide-left",
         activeIndex: 1,
         input3:"",
-        squareUrl:
-          "http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41100202000153",
-        handleSel: "",
       });
       const handleSelect = (key, keyPath) => {
         console.log(key, keyPath);
