@@ -46,12 +46,12 @@
     .silder-right{
       position: fixed;
       top:4rem;
-      right: 15rem;
+      right: 17rem;
     }
     .silder-left{
       position: fixed;
       top:4rem;
-      left: 15rem;
+      left: 17rem;
     }
   }
   </style>
