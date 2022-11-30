@@ -5,6 +5,12 @@ import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import requireTransform from 'vite-plugin-require-transform';
+//npm install postcss-px2rem px2rem-loader --save
+import px2rem from 'postcss-px2rem'
+const postcss = px2rem({
+  // 基准大小 baseSize，需要和rem.js中相同
+  remUnit: 14
+})
 export default defineConfig({
   base: "./", //记得修改index.heml,路径设置为当前路径
   plugins: [
@@ -26,6 +32,11 @@ export default defineConfig({
       hashPrefix: "ailiwen", 
     },
     preprocessorOptions: { //vite项目配置less全局样式
+      postcss: {
+        plugins: [
+          postcss
+        ]
+      },
       less: {
         additionalData: '@import "../src/common/style/globle.less";',
       },
