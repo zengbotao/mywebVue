@@ -2,12 +2,12 @@ import { createApp } from 'vue'
 import store from './store'
 import router from './router'
 import App from './App.vue'
-import './common/style/normalize.css';
-import './common/style/resetElement.less';
-import './utils/rem.js'
+import './common/style/normalize.css';//样式初始化
+import './common/style/resetElement.less';//重写ui组件库样式
+import './utils/rem.js'//实现自适应布局
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import 'element-plus/dist/index.css'
-import gallery from 'img-vuer3'
+import gallery from 'img-vuer3'//图片全局预览
 import 'img-vuer3/dist/style.css'
 const app = createApp(App) // 创建实例
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {

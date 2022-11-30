@@ -4,12 +4,12 @@ import vue from "@vitejs/plugin-vue"; //下载，导入扩展，并配置插件�
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
-import requireTransform from 'vite-plugin-require-transform';
+import requireTransform from 'vite-plugin-require-transform';//使得vite可以识别require（）
 //npm install postcss-px2rem px2rem-loader --save
 import px2rem from 'postcss-px2rem'
 const postcss = px2rem({
   // 基准大小 baseSize，需要和rem.js中相同
-  remUnit: 14
+  remUnit: 16
 })
 export default defineConfig({
   base: "./", //记得修改index.heml,路径设置为当前路径
@@ -31,14 +31,14 @@ export default defineConfig({
       scopeBehaviour: "local", 
       hashPrefix: "ailiwen", 
     },
-    preprocessorOptions: { //vite项目配置less全局样式
+    preprocessorOptions: { 
       postcss: {
         plugins: [
-          postcss
+          postcss//vite项目配置rem
         ]
       },
       less: {
-        additionalData: '@import "../src/common/style/globle.less";',
+        additionalData: '@import "../src/common/style/globle.less";',//vite项目配置less全局样式
       },
     },
   },
