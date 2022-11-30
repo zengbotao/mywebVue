@@ -3,6 +3,7 @@ import store from './store'
 import router from './router'
 import App from './App.vue'
 import './common/style/normalize.css';
+import './utils/rem.js'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'

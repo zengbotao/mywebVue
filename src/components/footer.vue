@@ -59,14 +59,15 @@
   
   <style lang="less" scoped> 
     .footr {
-        height: 100px;
+        height: 6.25rem;
         color: #666;
         text-align: center;
-        line-height: 25px;
-        font: 16px Verdana, Helvetica, Arial, sans-serif;
+        line-height: 1.5625rem;
+        font: 1rem Verdana, Helvetica, Arial, sans-serif;
+        display: block;
         .guohui {
           position: relative;
-          top: 3px;
+          top: .1875rem;
         }
         .aa {
           text-decoration: none;

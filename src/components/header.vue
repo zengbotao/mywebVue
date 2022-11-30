@@ -64,20 +64,21 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
-  border-bottom: 1px solid transparent;
+  height: 3.75rem;
+  border-bottom: .0625rem solid transparent;
   border-color: #f0f0f0;
   .titlePic {
-    width: 120px;
-    height: 60px;
+    width: 7.5rem;
+    height: 3.75rem;
     position: relative;
-    top: 2px;
+    top: .125rem;
+    left: .25rem;
   }
   .inputs {
-    margin: 15px 15px 15px 150px;
-    width: 280px;
+    margin: .9375rem .9375rem .9375rem 9.375rem;
+    width: 17.5rem;
     position: relative;
-    top: 3px;
+    top: .1875rem;
   }
   .header-home {
     flex: 1;
@@ -85,13 +86,13 @@ export default {
     .header-link {
       display: block;
       color: #000;
-      font-size: 20px;
+      font-size: 1.25rem;
       font-family: PingFang SC, Microsoft YaHei;
       text-decoration: none;
-      height: 60px;
+      height: 3.75rem;
       text-align: center;
-      line-height: 60px;
-      padding: 0 20px;
+      line-height: 3.75rem;
+      padding: 0 1.25rem;
     }
     .header-link:hover {
       background-color: rgb(155, 194, 245);

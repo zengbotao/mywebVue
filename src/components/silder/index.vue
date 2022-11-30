@@ -41,8 +41,8 @@ export default {
 
 <style lang="less" scoped>
 .content-right {
-  width: 260px;
-  padding: 5px;
+  width: 16.25rem;
+  padding: .25rem;
 
 }
 </style>

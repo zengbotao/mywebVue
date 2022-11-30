@@ -63,34 +63,34 @@ export default {
   display: flex;
   width: 100%;
   flex-direction: row;
-  margin: 8px 12px;
+  margin: .5rem .75rem;
   .iamges {
-    height: 120px;
-    width: 150px;
-    border-radius: 3px;
+    height: 7.5rem;
+    width: 9.375rem;
+    border-radius: .1875rem;
   }
   .neirong {
-    padding: 8px 12px;
+    padding: .5rem .75rem;
     display: flex;
     flex-direction: column;
     .title {
       display: block;
-      margin: 3px 4px 10px 4px;
-      font-size: 22px;
+      margin: .1875rem .25rem .625rem .25rem;
+      font-size: 1.375rem;
       font-weight: 500;
       color: #222226;
       overflow: hidden;
       white-space: normal;
       word-break: break-word;
       text-align: left;
-      line-height: 25px;
+      line-height: 1.5625rem;
       font-family: Microsoft YaHei;
     }
     .zhaiyao{
         display: block;
-      margin: 3px 4px ;
+      margin: .1875rem .25rem ;
       flex: 1;
-        font-size: 14px;
+        font-size: .875rem;
     font-weight: 400;
     color: #555666;
     overflow: hidden;
@@ -99,8 +99,8 @@ export default {
     display: -webkit-box; 
     }
     .neirong-icon{
-        width: 220px;
-        margin: 12px 4px  3px 4px ;;
+        width: 13.75rem;
+        margin: .75rem .25rem  .1875rem .25rem ;;
         display: flex;
         justify-content: space-between;
     }

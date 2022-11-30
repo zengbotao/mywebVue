@@ -1,9 +1,10 @@
 <template>
   <div id="app">
-
-      <Header class="headers"></Header>    
-      <router-view  class="viewers"/>      
-      <Footer></Footer>
+      
+        <Header class="headers"></Header>    
+        <router-view  class="viewers"/>      
+        <Footer></Footer>
+    
   </div>
 </template>
 
@@ -19,6 +20,7 @@ export default {
     const state = reactive({
       transitionName: "slide-left",
       activeIndex: 1,
+      layout:true,
       input3:"",
       squareUrl:
         "http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41100202000153",
@@ -41,7 +43,7 @@ export default {
   color: #fff;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   color: #010b14;
-  padding: 0 240px;
+  padding: 0 17rem;
  
   .headers{
     background-color: @Gbgc-color;
@@ -51,8 +53,8 @@ export default {
 
   }
   .viewers{
-    padding-top: 60px;
-    min-height: 761px;
+    padding-top: 3.75rem;
+    min-height: 47.5625rem;
     overflow-y: auto;
   }
 }

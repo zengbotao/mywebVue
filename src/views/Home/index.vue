@@ -51,20 +51,20 @@ export default {
 <style lang="less" scoped>
 .content-home {
   display: flex;
-  padding: 0 270px;
+  padding: 0 16.875rem;
   .content-main {
     flex: 1;
-    margin: 12px 0;
+    margin: .75rem 0;
   }
   .silder-right{
     position: fixed;
-    top:64px;
-    right: 240px;
+    top:4rem;
+    right: 17rem;
   }
   .silder-left{
     position: fixed;
-    top:64px;
-    left: 240px;
+    top:4rem;
+    left: 17rem;
   }
 }
 </style>

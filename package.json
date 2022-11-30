@@ -13,6 +13,8 @@
     "element-plus": "^2.2.25",
     "img-vuer3": "^1.0.2",
     "pdfjs-dist": "^3.1.81",
+    "postcss-px2rem": "^0.3.0",
+    "px2rem-loader": "^0.1.9",
     "vue": "3.2.25",
     "vue-pdf-embed": "^1.1.5",
     "vue-router": "^4.0.0-beta.13",

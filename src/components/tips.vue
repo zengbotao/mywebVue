@@ -43,40 +43,40 @@ export default {
 
 <style lang="less" scoped>
 .tips-main{
-    border: 1px solid #D8D8D8;
-    border-radius: 4px;
-    box-shadow: 0 0 3px 0 rgba(8, 111, 247, 0.23);
-    margin: 12px 0;
+    border: .0625rem solid #D8D8D8;
+    border-radius: .25rem;
+    box-shadow: 0 0 .1875rem 0 rgba(8, 111, 247, 0.23);
+    margin: .75rem 0;
     .tips-title{
         background-color: rgba(52, 90, 192, 0.801);
-        padding: 0 15px;
+        padding: 0 .9375rem;
         font-weight: 500;
-        font-size: 18px;
+        font-size: 1.125rem;
         overflow: hidden;
-        line-height: 31px;
+        line-height: 1.9375rem;
         color: #fff;
         text-align: left;
 
     }
     .tips-neirong{
         background-color: rgba(143, 171, 248, 0.801);
-        padding: 0 13px;
+        padding: 0 .8125rem;
         font-weight: 500;
-        font-size: 18px;
+        font-size: 1.125rem;
         overflow: hidden;
-        border-top: 1px solid #5c5a5a;
-        line-height: 31px;
+        border-top: .0625rem solid #5c5a5a;
+        line-height: 1.9375rem;
         color: #555666;
         text-align: left;
     }
     .tip-icon{
         position: relative;
-        top:3px;
+        top:.1875rem;
         color: #555666;
     }
     .tip-title{
         color: #555666;
-        font-size: 16px;
+        font-size: 1rem;
     }
 }
 </style>
