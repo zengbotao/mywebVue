@@ -11,9 +11,9 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import 'element-plus/dist/index.css'
 
 // v-md-editor
-import VMdEditor from '@kangc/v-md-editor/lib/codemirror-editor';
+import VMdEditor from '@kangc/v-md-editor';
+import '@kangc/v-md-editor/lib/style/base-editor.css';
 import VMdPreview from '@kangc/v-md-editor/lib/preview';
-import '@kangc/v-md-editor/lib/style/codemirror-editor.css';
 import githubTheme from '@kangc/v-md-editor/lib/theme/github.js';
 import '@kangc/v-md-editor/lib/theme/style/github.css';
 import '@kangc/v-md-editor/lib/style/preview.css';
@@ -25,7 +25,7 @@ VMdPreview.use(githubTheme, {
 VMdEditor.use(githubTheme, {
   Hljs: hljs,
 });
-app.use(VMdEditor);
+app.use(VMdEditor );
 app.use(VMdPreview);
 
 import gallery from 'img-vuer3'//图片全局预览

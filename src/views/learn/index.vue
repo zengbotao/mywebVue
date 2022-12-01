@@ -3,7 +3,7 @@
       <Silder class="silder-left" />
       <div class="content-main">
           <v-md-preview :text="text" height="400px"></v-md-preview>
-  
+          <v-md-editor v-model="text" height="400px"></v-md-editor>
       </div>
   
      <Silder class="silder-right"/>
