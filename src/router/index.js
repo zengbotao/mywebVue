@@ -10,20 +10,28 @@ const router = createRouter({
     {
       path: '/home',
       name: 'home',
-      component: () => import(/* webpackChunkName: "home" */ '@/views/Home/index.vue'),
+      component: () => import( '@/views/Home/index.vue'),
       meta: {
         index: 1
       }
     },
-    ...defaultRoutes,
     {
-      path: '/publish',
-      name: 'publish',
-      component: () => import(/* webpackChunkName: "about" */ '@/views/publish/index.vue'),
+      path: '/learn',
+      name: 'learn',
+      component: () => import('@/views/learn/index.vue'),
       meta: {
         index: 2
-      }
+      }},
+      {
+        path: '/download',
+        name: 'download',
+        component: () => import('@/views/download/index.vue'),
+        meta: {
+          index: 2
+        },
+     
     },
+    ...defaultRoutes,
     
   ]
 })

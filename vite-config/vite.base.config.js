@@ -7,6 +7,7 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import requireTransform from 'vite-plugin-require-transform';//使得vite可以识别require（）
 //npm install postcss-px2rem px2rem-loader --save
 import px2rem from 'postcss-px2rem'
+
 const postcss = px2rem({
   // 基准大小 baseSize，需要和rem.js中相同
   remUnit: 16

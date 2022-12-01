@@ -16,7 +16,9 @@
       <Content></Content>
       <Content></Content>
       <Content></Content>
-      <div></div>
+{{text}}
+        <v-md-preview :text="text" height="400px"></v-md-preview>
+
     </div>
 
    <Silder class="silder-right"/>
@@ -29,6 +31,8 @@ import Content from "./content.vue";
 import Tips from "@/components/tips.vue"
 import Silder from "@/components/silder/index.vue"
 import { useRouter } from "vue-router";
+import text from '../../ddd.md?raw'
+console.log(text)
 export default {
   components: { Content,Tips,Silder},
   setup() {
@@ -40,6 +44,7 @@ export default {
       scale: 1, // 缩放比例
       numPages: 0, // 总页数
       handleSel: "",
+      text:text
     });
 
     return {

@@ -5,16 +5,11 @@
     </div>
 
     <div class="header-home">
-      <router-link class="header-link" to="./home"> 首页 </router-link>
-      <router-link class="header-link" to="./publish"> 生活 </router-link>
-      <router-link class="header-link" to="./publish"> 娱乐 </router-link>
-      <a
-        class="header-link"
-        href="https://zbt.ailiwen.com.cn"
-        target="_blank"
-      >
-        学习</a>
-      <router-link class="header-link" to="./publish"> 素材下载 </router-link>
+      <router-link class="header-link" active-class="active" to="./home"> 首页 </router-link>
+      <router-link class="header-link" active-class="active" to="./publish"> 生活 </router-link>
+      <router-link class="header-link" active-class="active" to="./publish"> 娱乐 </router-link>
+      <router-link class="header-link" active-class="active" to="./learn"> 学习 </router-link>
+      <router-link class="header-link" active-class="active" to="./download"> 素材下载 </router-link>
       <a
         class="header-link"
         href="https://zbt.ailiwen.com.cn/about/jianli.html"
@@ -36,10 +31,12 @@
 
 <script>
 import { reactive, toRefs } from "vue";
-import { useRouter } from "vue-router";
+import { useRoute } from "vue-router";
 
 export default {
   setup() {
+    const route = useRoute();
+    console.log(route.params.name,route.name)
     const state = reactive({
       transitionName: "slide-left",
       activeIndex: 1,
@@ -93,6 +90,9 @@ export default {
       text-align: center;
       line-height: 3.75rem;
       padding: 0 1.25rem;
+    }
+    .active{
+      box-shadow: 0  -0.15rem 0.1rem -0.1rem rgb(60, 141, 247) inset;
     }
     .header-link:hover {
       background-color: rgb(155, 194, 245);
