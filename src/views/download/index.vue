@@ -1,18 +1,17 @@
 <template>
     <div class="content-home">
-      <Silder class="silder-left" />
+      <Silder class="silder" />
       <div class="content-main">
-          <v-md-preview :text="text" height="400px"></v-md-preview>
   
       </div>
   
-     <Silder class="silder-right"/>
+     <Silder class="silder"/>
     </div>
   </template>
   
   <script>
   import { reactive, toRefs, onMounted, computed } from "vue";
-  import Tips from "@/components/tips.vue"
+  import Tips from "@/components/silder/tips.vue"
   import Silder from "@/components/silder/index.vue"
   import { useRouter } from "vue-router";
   import text from '../../ddd.md?raw'
@@ -40,20 +39,9 @@
   <style lang="less" scoped>
   .content-home {
     display: flex;
-    padding: 0 16.875rem;
     .content-main {
       flex: 1;
-      margin: .75rem 0;
-    }
-    .silder-right{
-      position: fixed;
-      top:4rem;
-      right: 17rem;
-    }
-    .silder-left{
-      position: fixed;
-      top:4rem;
-      left: 17rem;
+      margin: .75rem 0 0 0;
     }
   }
   </style>

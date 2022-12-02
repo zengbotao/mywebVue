@@ -1,10 +1,8 @@
 <template>
   <div id="app">
-      
-        <Header class="headers"></Header>    
-        <router-view  class="viewers"/>      
-        <Footer></Footer>
-    
+    <Header class="headers"></Header>    
+    <router-view  class="viewers"/>      
+  <Footer></Footer>
   </div>
 </template>
 
@@ -43,10 +41,11 @@ export default {
   color: #fff;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   color: #010b14;
-  padding: 0 17rem;
+  padding: 0 15rem;
  
   .headers{
     background-color: @Gbgc-color;
+    width: calc(100% - 30rem);
     z-index: 1001;
     position: fixed;
     top:0px;

@@ -1,52 +1,30 @@
 <template>
   <div class="content-home">
-    <Silder class="silder-left" />
+    <Silder class="silder" />
     <div class="content-main">
-      <Content></Content>
-      <Content></Content>
-      <Content></Content>
-      <Content></Content>
-      <Content></Content>
-      <Content></Content>
-      <Content></Content>
-      <Content></Content>
-      <Content></Content>
-      <Content></Content>
-      <Content></Content>
-      <Content></Content>
-      <Content></Content>
-      <Content></Content>
-{{text}}
-        <v-md-preview :text="text" height="400px"></v-md-preview>
-
+      <MdEditor v-model="text" class="mdEditor" toolbarsExclude="['link', 'mermaid', 'katex', 'github']"  previewOnly="previewOnly" previewTheme="github" scrollAuto codeTheme="github"/>
+      <el-backtop :bottom="100"> </el-backtop>
     </div>
 
-   <Silder class="silder-right"/>
+    <Silder class="silder" />
   </div>
 </template>
 
 <script>
-import { reactive, toRefs, onMounted, computed } from "vue";
+import { reactive, toRefs, onMounted, computed , ref} from "vue";
 import Content from "./content.vue";
-import Tips from "@/components/tips.vue"
-import Silder from "@/components/silder/index.vue"
-import { useRouter } from "vue-router";
+import Tips from "@/components/silder/tips.vue";
+import Silder from "@/components/silder/index.vue";
 import text from '../../ddd.md?raw'
-console.log(text)
+import MdEditor from 'md-editor-v3';
+import 'md-editor-v3/lib/style.css';
 export default {
-  components: { Content,Tips,Silder},
+  components: { Content, Tips, Silder,MdEditor },
   setup() {
-    // onMounted(console.log(router));
-    // const router = useRouter();
     const state = reactive({
-      source: "../../VUE3.pdf", // 文件路径
-      pageNum: 1, // 当前页数
-      scale: 1, // 缩放比例
-      numPages: 0, // 总页数
-      handleSel: "",
       text:text
     });
-
+    
     return {
       ...toRefs(state),
     };
@@ -56,20 +34,14 @@ export default {
 <style lang="less" scoped>
 .content-home {
   display: flex;
-  padding: 0 16.875rem;
   .content-main {
     flex: 1;
-    margin: .75rem 0;
-  }
-  .silder-right{
-    position: fixed;
-    top:4rem;
-    right: 17rem;
-  }
-  .silder-left{
-    position: fixed;
-    top:4rem;
-    left: 17rem;
+    margin: 0.75rem 0 0 0;
+    .mdEditor{
+      padding:0 .9375rem;
+      background-color: @Gbgc-color;
+      font-family:PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+    }
   }
 }
 </style>

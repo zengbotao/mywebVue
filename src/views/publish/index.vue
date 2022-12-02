@@ -1,19 +1,19 @@
 <template>
     <div class="content-home">
-      <Silder class="silder-left" />
+      <Silder class="silder" />
       <div class="content-main">
         <Content></Content>
        
       </div>
   
-     <Silder class="silder-right"/>
+     <Silder class="silder"/>
     </div>
   </template>
   
   <script>
   import { reactive, toRefs, onMounted, computed } from "vue";
   import Content from "../Home/content.vue";
-  import Tips from "@/components/tips.vue"
+  import Tips from "@/components/silder/tips.vue"
   import Silder from "@/components/silder/index.vue"
   import { useRouter } from "vue-router";
   export default {
@@ -43,12 +43,12 @@
       flex: 1;
       margin: .75rem 0;
     }
-    .silder-right{
+    .silder{
       position: fixed;
       top:4rem;
       right: 17rem;
     }
-    .silder-left{
+    .silder{
       position: fixed;
       top:4rem;
       left: 17rem;

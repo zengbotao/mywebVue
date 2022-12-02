@@ -10,23 +10,11 @@ import './utils/rem.js'//实现自适应布局
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import 'element-plus/dist/index.css'
 
-// v-md-editor
-import VMdEditor from '@kangc/v-md-editor';
-import '@kangc/v-md-editor/lib/style/base-editor.css';
-import VMdPreview from '@kangc/v-md-editor/lib/preview';
-import githubTheme from '@kangc/v-md-editor/lib/theme/github.js';
-import '@kangc/v-md-editor/lib/theme/style/github.css';
-import '@kangc/v-md-editor/lib/style/preview.css';
-// highlightjs
-import hljs from 'highlight.js';
-VMdPreview.use(githubTheme, {
-  Hljs: hljs,
-});
-VMdEditor.use(githubTheme, {
-  Hljs: hljs,
-});
-app.use(VMdEditor );
-app.use(VMdPreview);
+import MdEditor from 'md-editor-v3';
+import 'md-editor-v3/lib/style.css';
+app.use(MdEditor,{
+  height:"1800px"
+})
 
 import gallery from 'img-vuer3'//图片全局预览
 import 'img-vuer3/dist/style.css'

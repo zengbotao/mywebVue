@@ -47,6 +47,7 @@ export default {
     border-radius: .25rem;
     box-shadow: 0 0 .1875rem 0 rgba(8, 111, 247, 0.23);
     margin: .75rem 0;
+    width: 14.5rem;
     .tips-title{
         background-color: rgba(52, 90, 192, 0.801);
         padding: 0 .9375rem;

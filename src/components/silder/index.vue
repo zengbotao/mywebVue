@@ -10,7 +10,7 @@
 
 <script>
 import { reactive, toRefs, onMounted, computed } from "vue";
-import Tips from "@/components/tips.vue"
+import Tips from "./tips.vue"
 export default {
   props: {
     title: {
@@ -26,6 +26,7 @@ export default {
       },
     },
   },
+  components:{Tips},
   setup() {
     // onMounted(console.log(router));
     // const router = useRouter()
@@ -40,9 +41,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.content-right {
-  width: 16.25rem;
-  padding: .25rem;
 
-}
 </style>
