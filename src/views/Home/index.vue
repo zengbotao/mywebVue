@@ -1,8 +1,15 @@
+<!--
+ * @Description: 
+ * @Autor: zengbotao@myhexin.com
+ * @Date: 2022-11-28 16:30:05
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-12-08 20:49:12
+-->
 <template>
   <div class="content-home">
     <Silder class="silder" />
     <div class="content-main">
-      <MdEditor v-model="text" class="mdEditor" toolbarsExclude="['link', 'mermaid', 'katex', 'github']"  previewOnly="previewOnly" previewTheme="github" scrollAuto codeTheme="github"/>
+      <MdEditor v-model="text" class="mdEditor" :toolbarsExclude="exIconList"  previewOnly previewTheme="github" scrollAuto codeTheme="github"/>
       <el-backtop :bottom="100"> </el-backtop>
     </div>
 
@@ -18,15 +25,28 @@ import Silder from "@/components/silder/index.vue";
 import text from '../../ddd.md?raw'
 import MdEditor from 'md-editor-v3';
 import 'md-editor-v3/lib/style.css';
+import {login} from '@/api/home'
 export default {
   components: { Content, Tips, Silder,MdEditor },
   setup() {
     const state = reactive({
-      text:text
+      text:text,
     });
-    
+    const exIconList=ref(['link', 'mermaid', 'katex', 'github'])
+    const getLogin=()=>{
+      // login().then((item)=>{
+      //   console.log(item)
+      // }).catch((err)=>{
+      //   console.log(err)
+      // })
+    }
+    onMounted(()=>{
+      getLogin()
+    });
     return {
       ...toRefs(state),
+      exIconList,
+      getLogin
     };
   },
 };

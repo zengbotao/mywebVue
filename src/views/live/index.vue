@@ -1,3 +1,10 @@
+<!--
+ * @Description: 
+ * @Autor: zengbotao@myhexin.com
+ * @Date: 2022-12-02 10:38:35
+ * @LastEditors: 
+ * @LastEditTime: 2022-12-08 20:34:58
+-->
 <template>
   <div class="content-home">
     <Silder class="silder" />
@@ -17,7 +24,6 @@ import Tips from "@/components/silder/tips.vue"
 import Silder from "@/components/silder/index.vue"
 import { useRouter } from "vue-router";
 import text from '../../ddd.md?raw'
-console.log(text)
 export default {
   components: { Content,Tips,Silder},
   setup() {

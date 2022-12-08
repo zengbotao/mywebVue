@@ -17,7 +17,7 @@ import Tips from "@/components/silder/tips.vue"
 import Silder from "@/components/silder/index.vue"
 import { useRouter } from "vue-router";
 import text from '../../ddd.md?raw'
-console.log(text)
+
 export default {
   components: { Content,Tips,Silder},
   setup() {

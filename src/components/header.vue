@@ -38,8 +38,8 @@ import { useRoute } from "vue-router";
 
 export default {
   setup() {
-    const route = useRoute();
-    console.log(route.params.name, route.name);
+    // const route = useRoute();
+    // console.log(route.params.name, route.name);
     const state = reactive({
       transitionName: "slide-left",
       activeIndex: 1,

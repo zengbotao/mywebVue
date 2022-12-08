@@ -1,19 +1,24 @@
+/*
+ * @Description: 
+ * @Autor: zengbotao@myhexin.com
+ * @Date: 2022-11-28 16:20:20
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-12-08 20:17:44
+ */
 
 
-// // import { Loading, Message, Notification } from 'element-ui';
-// import Axios from 'axios';
-// import router from '../router';
-// import store from '../store'
-// export  const request = Axios.create({
-//     baseURL: "/api"
-// });
+
+import Axios from 'axios';
+export  const axios = Axios.create({
+    baseURL: "/api"
+});
 
 
 
 // // 实例也可以做拦截器的处理
-// // 原本是实例request.interceptors, 但是由于menus的特殊性,不能近拦截器,处理603
+// // 原本是实例axios.interceptors, 但是由于menus的特殊性,不能近拦截器,处理603
 // // 所以, 选择使用全局拦截器.. 实际开发, 不会有这个问题  menus 和其他接口在一起的
-// request.interceptors.request.use(
+// axios.interceptors.axios.use(
 //     config => {
 
 //         if (config.loadingTag)
@@ -33,7 +38,7 @@
 //         return Promise.reject(err);
 //     }
 // );
-// request.interceptors.response.use(
+// axios.interceptors.response.use(
 //     response => {
 
 //         if (response.config.loadingTag)
@@ -83,4 +88,4 @@
 //     return promise.then(data => [data, undefined])
 //         .catch(err => [undefined, err]);
 // }
-// export  default request;
+export  default axios;
