@@ -13,7 +13,7 @@ import Home from "./views/Home/index.vue";
 import Header from "./components/header.vue";
 import Footer from '@/components/footer.vue'
 export default {
-  components: { Home,Header,Footer },
+  components: { Home,Header,Footer},
   setup() {
     const state = reactive({
       transitionName: "slide-left",
