@@ -3,16 +3,16 @@
  * @Autor: zengbotao@myhexin.com
  * @Date: 2022-11-28 16:20:20
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-12-09 12:13:25
+ * @LastEditTime: 2022-12-09 12:19:14
  */
 
 
 
 import Axios from 'axios';
-export  const axios = Axios.create({
+const axios = Axios.create({
     baseURL: "/api"
 });
-
+export  default  axios
 
 
 // // 实例也可以做拦截器的处理
