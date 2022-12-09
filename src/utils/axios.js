@@ -3,7 +3,7 @@
  * @Autor: zengbotao@myhexin.com
  * @Date: 2022-11-28 16:20:20
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-12-08 20:17:44
+ * @LastEditTime: 2022-12-09 12:13:25
  */
 
 
@@ -88,4 +88,3 @@ export  const axios = Axios.create({
 //     return promise.then(data => [data, undefined])
 //         .catch(err => [undefined, err]);
 // }
-export  default axios;

@@ -3,7 +3,7 @@
  * @Autor: zengbotao@myhexin.com
  * @Date: 2022-11-28 16:30:05
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-12-08 20:49:12
+ * @LastEditTime: 2022-12-09 12:14:08
 -->
 <template>
   <div class="content-home">
@@ -34,11 +34,11 @@ export default {
     });
     const exIconList=ref(['link', 'mermaid', 'katex', 'github'])
     const getLogin=()=>{
-      // login().then((item)=>{
-      //   console.log(item)
-      // }).catch((err)=>{
-      //   console.log(err)
-      // })
+      login().then((item)=>{
+        console.log(item)
+      }).catch((err)=>{
+        console.log(err)
+      })
     }
     onMounted(()=>{
       getLogin()

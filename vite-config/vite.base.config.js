@@ -1,3 +1,10 @@
+/*
+ * @Description: 
+ * @Autor: zengbotao@myhexin.com
+ * @Date: 2022-11-28 16:20:20
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-12-09 12:17:28
+ */
 import { defineConfig } from "vite"; //记得修改package.json的运行脚本，比对差别
 import path from "path";
 import vue from "@vitejs/plugin-vue"; //下载，导入扩展，并配置插件，vue要3.2.5版本以上才支持。一定要配置在插件中！！！
@@ -7,6 +14,8 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import requireTransform from 'vite-plugin-require-transform';//使得vite可以识别require（）
 //npm install postcss-px2rem px2rem-loader --save
 import px2rem from 'postcss-px2rem'
+
+import legacy from '@vitejs/plugin-legacy'//低版本浏览器兼容
 
 const postcss = px2rem({
   // 基准大小 baseSize，需要和rem.js中相同
@@ -24,7 +33,12 @@ export default defineConfig({
     }),
     requireTransform({
       fileRegex: /.js$|.vue$/
-  })
+  }),
+  legacy({
+    polyfills: ['es.promise.finally', 'es/map', 'es/set'],
+    modernPolyfills: ['es.promise.finally'],
+    targets: ['defaults', 'not IE 11']
+  }),
   ],
   css: {
     modules: {
@@ -67,6 +81,9 @@ export default defineConfig({
         // 在rollup里面, hash代表将你的文件名和文件内容进行组合计算得来的结果
         assetFileNames: "[hash].[name].[ext]",
       },
+    },
+      commonjsOptions: {
+        transformMixedEsModules: true //兼容commonjs语法
     },
     assetsInlineLimit: 4096000, // 4000kb
     outDir: "dist", // 配置输出目录
