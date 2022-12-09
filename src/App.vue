@@ -1,7 +1,14 @@
+<!--
+ * @Description: 
+ * @Autor: zengbotao@myhexin.com
+ * @Date: 2022-11-28 16:20:19
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-12-09 12:36:28
+-->
 <template>
   <div id="app">
     <Header class="headers"></Header>    
-    <router-view  class="viewers"/>      
+    <router-view />      
   <Footer></Footer>
   </div>
 </template>
@@ -41,7 +48,7 @@ export default {
   color: #fff;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   color: #010b14;
-  padding: 0 15rem;
+  padding: 0 14rem;
  
   .headers{
     background-color: @Gbgc-color;
@@ -50,11 +57,6 @@ export default {
     position: fixed;
     top:0px;
 
-  }
-  .viewers{
-    padding-top: 3.75rem;
-    min-height: 47.5625rem;
-    overflow-y: auto;
   }
 }
 </style>

@@ -2,8 +2,8 @@
  * @Description: 
  * @Autor: zengbotao@myhexin.com
  * @Date: 2022-12-02 10:38:35
- * @LastEditors: 
- * @LastEditTime: 2022-12-08 20:34:58
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-12-09 12:46:30
 -->
 <template>
   <div class="content-home">
@@ -47,6 +47,7 @@ export default {
 <style lang="less" scoped>
 .content-home {
   display: flex;
+  padding-top: 3.75rem;
   .content-main {
     flex: 1;
     margin: .75rem 0 0 0;

@@ -1,11 +1,18 @@
+<!--
+ * @Description: 
+ * @Autor: zengbotao@myhexin.com
+ * @Date: 2022-12-01 20:20:58
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-12-09 12:42:47
+-->
 <template>
     <div class="content-home">
-      <Silder class="silder" />
+      <Silder/>
       <div class="content-main">
   
       </div>
   
-     <Silder class="silder"/>
+     <Silder/>
     </div>
   </template>
   
@@ -38,6 +45,7 @@
   </script>
   <style lang="less" scoped>
   .content-home {
+    padding-top: 3.75rem;
     display: flex;
     .content-main {
       flex: 1;

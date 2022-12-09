@@ -1,5 +1,12 @@
+<!--
+ * @Description: 
+ * @Autor: zengbotao@myhexin.com
+ * @Date: 2022-11-29 21:00:44
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-12-09 12:37:33
+-->
 <template>
-  <div class="content-right">
+  <div>
       <div>
         <Tips  /> 
         <Tips title="相关内容"/>
@@ -41,5 +48,4 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
 </style>

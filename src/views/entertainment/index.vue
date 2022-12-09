@@ -1,3 +1,10 @@
+<!--
+ * @Description: 
+ * @Autor: zengbotao@myhexin.com
+ * @Date: 2022-12-02 09:35:22
+ * @LastEditors: 
+ * @LastEditTime: 2022-12-09 12:46:05
+-->
 <template>
   <div class="content-home">
     <Silder class="silder" />
@@ -41,6 +48,9 @@ export default {
 <style lang="less" scoped>
 .content-home {
   display: flex;
+
+  padding-top: 3.75rem;
+
   .content-main {
     flex: 1;
     margin: .75rem 0 0 0;

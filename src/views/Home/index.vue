@@ -3,17 +3,16 @@
  * @Autor: zengbotao@myhexin.com
  * @Date: 2022-11-28 16:30:05
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-12-09 12:14:08
+ * @LastEditTime: 2022-12-09 12:40:09
 -->
 <template>
   <div class="content-home">
-    <Silder class="silder" />
+    <Silder />
     <div class="content-main">
       <MdEditor v-model="text" class="mdEditor" :toolbarsExclude="exIconList"  previewOnly previewTheme="github" scrollAuto codeTheme="github"/>
       <el-backtop :bottom="100"> </el-backtop>
     </div>
-
-    <Silder class="silder" />
+    <Silder/>
   </div>
 </template>
 
@@ -53,10 +52,13 @@ export default {
 </script>
 <style lang="less" scoped>
 .content-home {
-  display: flex;
+    padding-top: 3.75rem;
+    min-height: 47.5625rem;
+    overflow-y: auto;
+    display: flex;
   .content-main {
     flex: 1;
-    margin: 0.75rem 0 0 0;
+    padding: 0.75rem 0 0 0.75rem;
     .mdEditor{
       padding:0 .9375rem;
       background-color: @Gbgc-color;
@@ -64,4 +66,5 @@ export default {
     }
   }
 }
+
 </style>

@@ -1,10 +1,3 @@
-<!--
- * @Description: 
- * @Autor: zengbotao@myhexin.com
- * @Date: 2022-12-01 19:29:23
- * @LastEditors: 
- * @LastEditTime: 2022-12-09 11:22:22
--->
 ### 1.1 什么是AOP?
 
 * AOP(Aspect Oriented Programming)面向切面编程，一种编程范式，指导开发者如何组织程序结构。
@@ -19,5 +12,3 @@
 前面咱们有技术就可以实现这样的功能即`代理模式`。
 
 ### 1.3 AOP核心概念
-
-为了能更好的理解AOP的相关

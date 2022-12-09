@@ -63,7 +63,7 @@ export default {
   display: flex;
   width: 100%;
   flex-direction: row;
-  margin: .5rem .75rem;
+  margin: .5rem 0rem;
   .iamges {
     height: 7.5rem;
     width: 9.375rem;
