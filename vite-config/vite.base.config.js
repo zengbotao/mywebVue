@@ -3,7 +3,7 @@
  * @Autor: zengbotao@myhexin.com
  * @Date: 2022-11-28 16:20:20
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-12-09 12:17:28
+ * @LastEditTime: 2022-12-09 16:20:54
  */
 import { defineConfig } from "vite"; //记得修改package.json的运行脚本，比对差别
 import path from "path";
@@ -63,16 +63,24 @@ export default defineConfig({
       // 程序运行的目录  相对下面的src => 的绝对路径
       "@": path.resolve(__dirname, "..", "./src"),
       "~": path.resolve(__dirname, "..", "./"), // 项目根目录
+      "node_modules":path.resolve(__dirname, "..", "./node_modules"),
     },
     extensions: [".mjs", ".js", ".css", ".json", ".vue"], //记得添加.vue,否则vite会识别不了
   },
   preview: {
     //预览，也可使使用代理，模仿打包后的生产环境，配置见官网
     port: 8080, //npx vite preview
-    open: true,
+    proxy:{
+      '^/api': {
+        target: 'http://121.4.81.192:7999',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      },
+    }
   },
   build: {
     // 构建生产包时的一些配置策略,
+    
     //开发环境时利用的esbuild
     rollupOptions: {
       // 配置rollup的一些构建策略
@@ -81,9 +89,14 @@ export default defineConfig({
         // 在rollup里面, hash代表将你的文件名和文件内容进行组合计算得来的结果
         assetFileNames: "[hash].[name].[ext]",
       },
+      
     },
       commonjsOptions: {
-        transformMixedEsModules: true //兼容commonjs语法
+        transformMixedEsModules: true, //兼容commonjs语法还是不行
+        // namedExports:{
+        //   'node_modules/axios/lib/utils.js':['isStandardBrowserEnv']
+        // }
+
     },
     assetsInlineLimit: 4096000, // 4000kb
     outDir: "dist", // 配置输出目录

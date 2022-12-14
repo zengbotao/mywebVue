@@ -5,19 +5,19 @@
     </div>
 
     <div class="header-home">
-      <router-link class="header-link" active-class="active" to="./home">
+      <router-link class="header-link" active-class="active" to="/nomal/home">
         首页
       </router-link>
-      <router-link class="header-link" active-class="active" to="./live">
+      <router-link class="header-link" active-class="active" to="/nomal/live">
         生活
       </router-link>
-      <router-link class="header-link" active-class="active" to="./entertainment">
+      <router-link class="header-link" active-class="active" to="/nomal/entertainment">
         娱乐
       </router-link>
-      <router-link class="header-link" active-class="active" to="./learn">
+      <router-link class="header-link" active-class="active" to="/nomal/learn">
         学习
       </router-link>
-      <router-link class="header-link" active-class="active" to="./download">
+      <router-link class="header-link" active-class="active" to="/nomal/download">
         资源下载
       </router-link>
     </div>

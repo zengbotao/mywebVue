@@ -3,24 +3,18 @@
  * @Autor: zengbotao@myhexin.com
  * @Date: 2022-11-28 16:20:19
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-12-09 12:36:28
+ * @LastEditTime: 2022-12-14 10:54:37
 -->
 <template>
-  <div id="app">
-    <Header class="headers"></Header>    
+  <div id="app"> 
     <router-view />      
-  <Footer></Footer>
   </div>
 </template>
 
 <script>
 import { reactive, toRefs } from "vue";
 import { useRouter } from "vue-router";
-import Home from "./views/Home/index.vue";
-import Header from "./components/header.vue";
-import Footer from '@/components/footer.vue'
 export default {
-  components: { Home,Header,Footer},
   setup() {
     const state = reactive({
       transitionName: "slide-left",
@@ -48,15 +42,5 @@ export default {
   color: #fff;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   color: #010b14;
-  padding: 0 14rem;
- 
-  .headers{
-    background-color: @Gbgc-color;
-    width: calc(100% - 30rem);
-    z-index: 1001;
-    position: fixed;
-    top:0px;
-
-  }
 }
 </style>

@@ -1,3 +1,10 @@
+<!--
+ * @Description: 
+ * @Autor: zengbotao@myhexin.com
+ * @Date: 2022-11-29 20:41:43
+ * @LastEditors: 
+ * @LastEditTime: 2022-12-14 11:08:02
+-->
 <template>
   <div class="footr">
     <p></p>
@@ -14,7 +21,7 @@
     </p>
     <p>
       相关链接：
-      <a href="https://zbt.ailiwen.com.cn/about/jianli.html" target="_blank">
+      <a href="https://zbt.ailiwen.com.cn/" target="_blank">
         个人笔记与博客</a
       >
     </p>
