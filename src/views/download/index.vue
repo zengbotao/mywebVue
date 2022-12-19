@@ -3,7 +3,7 @@
  * @Autor: zengbotao@myhexin.com
  * @Date: 2022-12-01 20:20:58
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-12-09 12:42:47
+ * @LastEditTime: 2022-12-15 14:53:59
 -->
 <template>
     <div class="content-home">
@@ -21,8 +21,7 @@
   import Tips from "@/components/silder/tips.vue"
   import Silder from "@/components/silder/index.vue"
   import { useRouter } from "vue-router";
-  import text from '../../ddd.md?raw'
-  
+
   export default {
     components: { Tips,Silder},
     setup() {
@@ -34,7 +33,7 @@
         scale: 1, // 缩放比例
         numPages: 0, // 总页数
         handleSel: "",
-        text:text
+        text:""
       });
   
       return {

@@ -23,7 +23,6 @@ import Content from "../Home/content.vue";
 import Tips from "@/components/silder/tips.vue"
 import Silder from "@/components/silder/index.vue"
 import { useRouter } from "vue-router";
-import text from '../../ddd.md?raw'
 
 export default {
   components: { Content,Tips,Silder},
@@ -36,7 +35,6 @@ export default {
       scale: 1, // 缩放比例
       numPages: 0, // 总页数
       handleSel: "",
-      text:text
     });
 
     return {

@@ -3,12 +3,14 @@
  * @Autor: zengbotao@myhexin.com
  * @Date: 2022-11-28 16:20:19
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-12-14 10:33:19
+ * @LastEditTime: 2022-12-16 20:05:23
 -->
 <template>
     <div class="full">
-      <Header class="headers"></Header>    
-      <router-view />      
+      <Header class="headers"></Header>   
+      <keep-alive>
+        <router-view/>  
+      </keep-alive> 
       <Footer></Footer>
     </div>
   </template>
@@ -45,14 +47,13 @@
   <style lang="less" scoped> 
   .full {
     background-color: @Gbgc-color;
-    color: #fff;
     font-family: "Avenir", Helvetica, Arial, sans-serif;
     color: #010b14;
     margin: 0 14rem;
    
     .headers{
       background-color: @Gbgc-color;
-      width: calc(100% - 30rem);
+      width: calc(100% - 28rem);
       z-index: 1001;
       position: fixed;
       top:0px;

@@ -1,56 +1,77 @@
 <!--
  * @Description: 
  * @Autor: zengbotao@myhexin.com
- * @Date: 2022-12-02 10:38:35
+ * @Date: 2022-11-28 16:30:05
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-12-09 12:46:30
+ * @LastEditTime: 2022-12-16 18:57:58
 -->
 <template>
   <div class="content-home">
-    <Silder class="silder" />
+    <Silder />
     <div class="content-main">
-
-
+      <MdEditor v-model="text" class="mdEditor" :toolbarsExclude="exIconList"  previewOnly previewTheme="github" scrollAuto codeTheme="github"/>
+      <el-backtop :bottom="100"> </el-backtop>
     </div>
-
-
+    <Silder/>
   </div>
 </template>
 
 <script>
-import { reactive, toRefs, onMounted, computed } from "vue";
-import Content from "../Home/content.vue";
-import Tips from "@/components/silder/tips.vue"
-import Silder from "@/components/silder/index.vue"
-import { useRouter } from "vue-router";
-import text from '../../ddd.md?raw'
+import { reactive, toRefs, onMounted, computed , ref} from "vue";
+import Tips from "@/components/silder/tips.vue";
+import Silder from "@/components/silder/index.vue";
+import MdEditor from 'md-editor-v3';
+import 'md-editor-v3/lib/style.css';
+import {getMdbyID,pageMd} from '@/api/home'
 export default {
-  components: { Content,Tips,Silder},
+  components: {  Tips, Silder,MdEditor },
   setup() {
-    // onMounted(console.log(router));
-    // const router = useRouter();
     const state = reactive({
-      source: "../../VUE3.pdf", // 文件路径
-      pageNum: 1, // 当前页数
-      scale: 1, // 缩放比例
-      numPages: 0, // 总页数
-      handleSel: "",
-      text:text
+      text:'',
     });
-
+    const exIconList=ref(['link', 'mermaid', 'katex', 'github'])
+    
+    const showMd=()=>{
+      let params={
+        PageSize:10,
+        PageCur:1
+      };
+      // pageMd(params).then((item)=>{
+      //   console.log(item)
+      //   state.text=JSON.parse(item.data.data.text)
+      // }).catch((err)=>{
+      //   console.log(err)
+      // })
+    }
+    onMounted(()=>{
+      showMd()
+    });
     return {
       ...toRefs(state),
+      exIconList,
+      showMd
     };
   },
 };
 </script>
 <style lang="less" scoped>
 .content-home {
-  display: flex;
-  padding-top: 3.75rem;
+    padding-top: 3.75rem;
+    min-height: 47.5625rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: row;
   .content-main {
-    flex: 1;
-    margin: .75rem 0 0 0;
+    // flex: 1;
+    padding: 0.75rem 0 0 0.75rem;
+    width: calc(100% - 30rem);
+    .mdEditor{
+      padding:0 .9375rem;
+      background-color: @Gbgc-color;
+      width: 100%;
+      font-family:PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+    }
   }
 }
+
 </style>

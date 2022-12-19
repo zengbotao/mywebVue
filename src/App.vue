@@ -1,10 +1,3 @@
-<!--
- * @Description: 
- * @Autor: zengbotao@myhexin.com
- * @Date: 2022-11-28 16:20:19
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-12-14 10:54:37
--->
 <template>
   <div id="app"> 
     <router-view />      
@@ -40,7 +33,12 @@ export default {
 #app {
   background-color: @Gbgc-color;
   color: #fff;
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family:Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,\5fae\8f6f\96c5\9ed1,Arial,sans-serif;
   color: #010b14;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+#app ::-webkit-scrollbar{
+  display:none;
 }
 </style>

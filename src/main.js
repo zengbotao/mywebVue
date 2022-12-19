@@ -3,7 +3,7 @@
  * @Autor: zengbotao@myhexin.com
  * @Date: 2022-11-28 16:20:19
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-12-08 20:03:38
+ * @LastEditTime: 2022-12-19 09:53:31
  */
 import { createApp } from 'vue'
 import store from './store'
@@ -37,6 +37,11 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
     sliderBackgroundColor: 'rgba(0,0,0,0.6)',
     sliderZIndex: 1001,
   })
+
+//提供全局方法
+import {showMsg} from "@/utils/globleFuc.js"
+app.provide('showMsg', showMsg);//消息提示
+
 app.use(router)
 app.use(store)
 app.mount('#app')

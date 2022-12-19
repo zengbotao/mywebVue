@@ -72,7 +72,6 @@ export default {
     height: 3.75rem;
     position: relative;
     top: 0.125rem;
-    left: 0.25rem;
   }
   .inputs {
     margin: 0.9375rem 0.9375rem 0.9375rem 9.375rem;
