@@ -9,17 +9,14 @@
   <div class="tips-main">
     <div class="tips-title">{{ title }}</div>
     <div class="tips-neirong">
-      <div v-for="(item, index) in scanlist" :key="index">
-        <el-button
-          :key="item.value"
-          type="warning"
-          size="small"
-          @click="selectOne(item.value)"
-          plain
-          :class="active === item.value ? 'activeClass' : ''"
-        >
-          {{ item.label }}</el-button
-        >
+      <div
+        class="label"
+        v-for="(item, index) in scanlist"
+        :key="index"
+        @click="selectOne(item.value)"
+        :class="active === item.value ? 'activeClass' : ''"
+      >
+        {{ item.label }}
       </div>
     </div>
   </div>
@@ -55,14 +52,13 @@ export default {
       active: "",
     });
     const selectOne = (scan) => {
-      if(state.active === scan){
-        state.active=''
+      if (state.active === scan) {
+        state.active = "";
         context.emit("selectScan", state.active);
-      }else{
-        state.active = scan
+      } else {
+        state.active = scan;
         context.emit("selectScan", state.active);
       }
-      
     };
     return {
       ...toRefs(state),
@@ -76,30 +72,46 @@ export default {
 .tips-main {
   border: 0.0625rem solid rgba(236, 181, 98, 0.801);
   border-radius: 0.25rem;
-  box-shadow: 0 0 0.1875rem 0 rgba(8, 111, 247, 0.23);
-  margin: 0.75rem 0;
+  margin: 0.75rem;
   width: 14.5rem;
   .tips-title {
-    background-color: rgba(230, 141, 8, 0.801);
+    background-color: @GorangeS;
     padding: 0 0.8125rem;
     font-weight: 500;
-    // margin: 0 .0625rem;
-    font-size: 1.125rem;
+    text-align: center;
+    font-size: 1rem;
     overflow: hidden;
-    line-height: 1.9375rem;
+    line-height: 2.5rem;
     color: #fff;
-    text-align: left;
   }
   .tips-neirong {
     background-color: @Gbgc-color;
-    padding: 0 0.8125rem;
+    padding: 0.6rem 0.8125rem;
     font-weight: 500;
-    font-size: 1.125rem;
+    font-size: 0.875rem;
     overflow: hidden;
     border-top: 0.0625rem solid #e9e3e3;
     line-height: 1.9375rem;
     color: #555666;
     text-align: left;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .label {
+      align-items: center;
+      padding: 0.1875rem;
+      background-color: @GorangeQ;
+      border: @GorangeS 0.0625rem solid;
+      margin: 0.2875rem 0.4rem;
+      width: 10rem;
+      font-size: 0.75rem;
+      text-align: center;
+      &:hover {
+        background-color: @GorangeS;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
   }
   .tip-icon {
     position: relative;
@@ -111,8 +123,8 @@ export default {
     font-size: 1rem;
   }
 }
-.activeClass{
-  background-color: rgba(230, 141, 8, 0.801);
+.activeClass {
+  background-color: @GorangeS !important;
   color: #fff;
 }
 </style>

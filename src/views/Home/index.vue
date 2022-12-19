@@ -7,7 +7,6 @@
 -->
 <template>
   <div class="content-home" v-loading="loading">
-    <Silder class="silder-left" />
     <div class="content-main " v-show="!display">
       <div
         class="reee"
@@ -55,13 +54,12 @@
 import { reactive, toRefs, onMounted, computed, ref } from "vue";
 import contentNoPic from "./contentNoPic.vue";
 import Tips from "@/components/silder/tips.vue";
-import Silder from "@/components/silder/index.vue";
 import tipsScan from "@/components/tipsScan";
 import MdEditor from "md-editor-v3";
 import "md-editor-v3/lib/style.css";
 import { pageMd } from "@/api/home";
 export default {
-  components: { contentNoPic, Tips, Silder, MdEditor, tipsScan },
+  components: { contentNoPic, Tips, MdEditor, tipsScan },
   setup() {
     const state = reactive({
       contenlist: [],
@@ -73,16 +71,19 @@ export default {
       noMore: computed(() => (pageCan.PageCur - 1) * 10 >= pageCan.PageTotal), //没有加载了
       stopScroll: computed(() => state.loadingContent || state.noMore),
     });
+    //分页参数
     const pageCan = reactive({
       PageSize: 10,
       PageCur: 1,
       PageTotal: null,
     });
+    //条件筛选
     const Wrapper = reactive({
       Scan: "",
       Title: "",
       Label: "",
     });
+    
     const exIconList = ref(["link", "mermaid", "katex", "github"]);
 
     /**
@@ -184,11 +185,6 @@ export default {
   overflow-y: auto;
   display: flex;
   flex-direction: row;
-  .silder-left {
-    position: fixed;
-    left: 14rem;
-    top: 3.875rem;
-  }
   .silder-right {
     position: fixed;
     right: 14rem;
@@ -196,15 +192,15 @@ export default {
   }
 
   .content-main {
-    margin: 0 14rem;
-    padding: 0.75rem 0 0 0.75rem;
-    width: calc(100% - 30rem);
+    margin: 0 14rem  0 0;
+    padding: 0.75rem 0 0 0rem;
+    width: calc(100% - 16rem);
     .reee {
       height: 90rem;
       overflow: auto;
     }
     .contentt{
-      height: 8.73rem;
+      // height: 8.73rem;
     }
     .title {
       display: block;

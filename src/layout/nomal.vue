@@ -8,9 +8,7 @@
 <template>
     <div class="full">
       <Header class="headers"></Header>   
-      <keep-alive>
-        <router-view/>  
-      </keep-alive> 
+      <router-view/> 
       <Footer></Footer>
     </div>
   </template>

@@ -6,7 +6,7 @@
 
     <div class="header-home">
       <router-link class="header-link" active-class="active" to="/nomal/home">
-        首页
+        编程
       </router-link>
       <router-link class="header-link" active-class="active" to="/nomal/live">
         生活
