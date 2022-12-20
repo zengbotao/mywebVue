@@ -68,7 +68,7 @@ export default {
       title: "",
       loading: false, //加载页面n
       loadingContent: false, //加载列表
-      noMore: computed(() => (pageCan.PageCur - 1) * 10 >= pageCan.PageTotal), //没有加载了
+      noMore: computed(() => pageCan.PageCur * 10 >= pageCan.PageTotal), //没有加载了
       stopScroll: computed(() => state.loadingContent || state.noMore),
     });
     //分页参数
@@ -122,8 +122,8 @@ export default {
      * @author: zengbotao@myhexin.com
      */
     const showsize = () => {
-      pageCan.PageCur = pageCan.PageCur + 1;
       if(state.stopScroll)return
+      pageCan.PageCur = pageCan.PageCur + 1;
       let params = { ...pageCan, ...Wrapper };
       state.loadingContent = true;
       pageMd(params)

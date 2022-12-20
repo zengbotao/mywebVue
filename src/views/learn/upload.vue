@@ -14,8 +14,15 @@
       :rules="rules"
       ref="ruleFormRef"
     >
-      <el-form-item label="作者名" prop="name">
-        <el-input v-model="form.name" class="form-input" />
+      <el-form-item label="板块" prop="name">
+        <el-select v-model="form.name" placeholder="请选择板块" class="form-input">
+          <el-option
+            v-for="(item, index) in headlist"
+            :key="index"
+            :label="item.label"
+            :value="item.value"
+          />
+        </el-select>
       </el-form-item>
       <el-form-item label="标题" prop="title">
         <el-input v-model="form.title" class="form-input" />
@@ -67,7 +74,7 @@ import {
 } from "vue";
 import { saveMd } from "@/api/home";
 import dayjs from "dayjs";
-import { scanlist, qianlist, houlist } from "@/common/js/globleData";
+import { scanlist, qianlist, houlist ,headlist} from "@/common/js/globleData";
 export default {
   components: {},
   props: {
@@ -77,6 +84,7 @@ export default {
     const state = reactive({
       time: new Date(),
       scanlist: scanlist,
+      headlist:headlist,
       ruleFormRef: ref(null),
       labellist: computed(() => {
         if (form.scan === "qian") {
@@ -137,8 +145,7 @@ export default {
     };
     const rules = reactive({
       name: [
-        { required: true, message: "请输入文章的名字", trigger: "blur" },
-        { max: 30, message: "最长不超过30个字", trigger: "blur" },
+        { required: true, message: "请选择板块", trigger: "change" },
       ],
       title: [
         {

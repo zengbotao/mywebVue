@@ -75,6 +75,14 @@ export default {
             item.description2 = JSON.parse(item.description).split("提取码")[1];
             return item;
           });
+          if(state.contenlist.length % 2===1){
+            state.contenlist.push({ 
+                description1: "链接：https://zbt.ailiwen.com.cn/ ",
+                description2: "点击即可获取",
+                title: "站长的笔记",
+                time: "2022-12-19T07:45:32.000+00:00"
+            })
+          }
           state.loading = false;
           pageCan.PageTotal = item.data.data.page.pageTotal;
         })
@@ -105,12 +113,12 @@ export default {
     flex-wrap: wrap;
     justify-content: center;
     .content {
-      flex: 1;
+      // flex: 1;
       width: 36rem;
-      margin: 1rem;
+      margin: 2rem;
       padding: 1rem;
       border-radius: 6px;
-      background-color: rgb(235, 50, 50);
+      background-color: rgb(245, 221, 163);
       .title {
         display: block;
         font-size: 1.375rem;

@@ -11,42 +11,61 @@
       <router-link class="header-link" active-class="active" to="/nomal/live">
         生活
       </router-link>
-      <router-link class="header-link" active-class="active" to="/nomal/entertainment">
+      <router-link
+        class="header-link"
+        active-class="active"
+        to="/nomal/entertainment"
+      >
         娱乐
       </router-link>
       <router-link class="header-link" active-class="active" to="/nomal/learn">
-        学习
+        发布
       </router-link>
-      <router-link class="header-link" active-class="active" to="/nomal/download">
+      <router-link
+        class="header-link"
+        active-class="active"
+        to="/nomal/download"
+      >
         资源下载
       </router-link>
     </div>
     <el-input
-      v-model="input3"
-      size="large"
+      v-model="inputSearch"
+      size="small"
       placeholder="请输入...."
       class="input-with-select inputs"
     >
-      <template #append> 搜索 </template>
+      <template #prepend>
+        <el-select v-model="select" placeholder="Select" style="width: 85px">
+          <el-option
+            v-for="(item, index) in headlist"
+            :key="index"
+            :label="item.label"
+            :value="item.value"
+          />
+        </el-select>
+      </template>
+
+      <template #append>
+        <el-button>
+          <el-icon><Search /></el-icon>
+        </el-button>
+      </template>
     </el-input>
   </div>
 </template>
 
 <script>
 import { reactive, toRefs } from "vue";
-import { useRoute } from "vue-router";
-
+import { headlist } from "@/common/js/globleData";
 export default {
   setup() {
     // const route = useRoute();
     // console.log(route.params.name, route.name);
     const state = reactive({
-      transitionName: "slide-left",
-      activeIndex: 1,
-      input3: "",
-      squareUrl:
-        "http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41100202000153",
-      handleSel: "",
+      select: "biancheng",
+      inputSearch: "",
+      headlist: headlist,
     });
     const handleSelect = (key, keyPath) => {
       console.log(key, keyPath);
@@ -75,7 +94,7 @@ export default {
   }
   .inputs {
     margin: 0.9375rem 0.9375rem 0.9375rem 9.375rem;
-    width: 17.5rem;
+    width: 37.5rem;
     position: relative;
     top: 0.1875rem;
   }
@@ -83,24 +102,23 @@ export default {
     flex: 1;
     display: flex;
     .header-link {
-    display: block;
-    color: #000;
-    font-size: 1.25rem;
-    font-family: PingFang SC, Microsoft YaHei;
-    text-decoration: none;
-    height: 3.75rem;
-    text-align: center;
-    line-height: 3.75rem;
-    padding: 0 1.25rem;
-}
-.header-link:hover {
-    background-color: rgb(155, 194, 245);
-  }
+      display: block;
+      color: #000;
+      font-size: 1.25rem;
+      font-family: PingFang SC, Microsoft YaHei;
+      text-decoration: none;
+      height: 3.75rem;
+      text-align: center;
+      line-height: 3.75rem;
+      padding: 0 1.25rem;
+    }
+    .header-link:hover {
+      background-color: rgb(155, 194, 245);
+    }
 
-.active {
-    box-shadow: 0 -0.15rem 0.1rem -0.1rem rgb(60, 141, 247) inset;
-  }
-
+    .active {
+      box-shadow: 0 -0.15rem 0.1rem -0.1rem rgb(60, 141, 247) inset;
+    }
   }
 }
 </style>
