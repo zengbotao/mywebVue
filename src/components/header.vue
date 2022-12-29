@@ -8,7 +8,7 @@
       <router-link class="header-link" active-class="active" to="/nomal/home">
         编程
       </router-link>
-      <router-link class="header-link" active-class="active" to="/nomal/live">
+      <!-- <router-link class="header-link" active-class="active" to="/nomal/live">
         生活
       </router-link>
       <router-link
@@ -17,10 +17,10 @@
         to="/nomal/entertainment"
       >
         娱乐
-      </router-link>
-      <router-link class="header-link" active-class="active" to="/nomal/learn">
+      </router-link> -->
+      <!-- <router-link class="header-link" active-class="active" to="/nomal/learn">
         发布
-      </router-link>
+      </router-link> -->
       <router-link
         class="header-link"
         active-class="active"
