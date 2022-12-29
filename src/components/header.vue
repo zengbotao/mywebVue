@@ -35,19 +35,9 @@
       placeholder="请输入...."
       class="input-with-select inputs"
     >
-      <template #prepend>
-        <el-select v-model="select" placeholder="Select" style="width: 85px">
-          <el-option
-            v-for="(item, index) in headlist"
-            :key="index"
-            :label="item.label"
-            :value="item.value"
-          />
-        </el-select>
-      </template>
 
       <template #append>
-        <el-button>
+        <el-button @click="handleSelect">
           <el-icon><Search /></el-icon>
         </el-button>
       </template>
@@ -57,22 +47,24 @@
 
 <script>
 import { reactive, toRefs } from "vue";
-import { headlist } from "@/common/js/globleData";
+import {useRouter,useRoute} from "vue-router"
+import  useEmitter from '@/utils/eventBus'
 export default {
   setup() {
-    // const route = useRoute();
-    // console.log(route.params.name, route.name);
+    const route = useRoute();
     const state = reactive({
       select: "biancheng",
       inputSearch: "",
-      headlist: headlist,
     });
-    const handleSelect = (key, keyPath) => {
-      console.log(key, keyPath);
-    };
+    const Emitter=useEmitter()
+    const handleSelect = () => {
+      console.log(route,`SearchStr${route.name}`)
+      Emitter.emit(`SearchStr${route.name}`, state.inputSearch)
+    }
     return {
       ...toRefs(state),
       handleSelect,
+      Emitter
     };
   },
 };

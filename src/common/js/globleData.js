@@ -129,18 +129,18 @@ export const headlist = [
     value: "biancheng",
     label: "编程",
   },
-  {
-    value: "spring",
-    label: "生活",
-  },
-  {
-    value: "springboot",
-    label: "娱乐",
-  },
-  {
-    value: "springMVC",
-    label: "学习",
-  },
+  // {
+  //   value: "spring",
+  //   label: "生活",
+  // },
+  // {
+  //   value: "springboot",
+  //   label: "娱乐",
+  // },
+  // {
+  //   value: "springMVC",
+  //   label: "学习",
+  // },
   {
     value: "maven",
     label: "资源下载",

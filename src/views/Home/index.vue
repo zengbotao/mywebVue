@@ -7,7 +7,7 @@
 -->
 <template>
   <div class="content-home" v-loading="loading">
-    <div class="content-main " v-show="!display">
+    <div class="content-main" v-show="!display">
       <div
         class="reee"
         v-infinite-scroll="showsize"
@@ -51,13 +51,14 @@
 </template>
 
 <script>
-import { reactive, toRefs, onMounted, computed, ref } from "vue";
+import { reactive, toRefs, onMounted, computed, ref,onUnmounted} from "vue";
 import contentNoPic from "./contentNoPic.vue";
 import Tips from "@/components/silder/tips.vue";
 import tipsScan from "@/components/tipsScan";
 import MdEditor from "md-editor-v3";
 import "md-editor-v3/lib/style.css";
 import { pageMd } from "@/api/home";
+import useEmitter from "@/utils/eventBus";
 export default {
   components: { contentNoPic, Tips, MdEditor, tipsScan },
   setup() {
@@ -66,6 +67,7 @@ export default {
       display: false,
       text: "",
       title: "",
+      searchNUmm: 0,
       loading: false, //加载页面n
       loadingContent: false, //加载列表
       noMore: computed(() => pageCan.PageCur * 10 >= pageCan.PageTotal), //没有加载了
@@ -83,7 +85,7 @@ export default {
       Title: "",
       Label: "",
     });
-    
+    const Emitter = useEmitter();
     const exIconList = ref(["link", "mermaid", "katex", "github"]);
 
     /**
@@ -111,7 +113,7 @@ export default {
      * @author: zengbotao@myhexin.com
      */
     const selectScan = (scan) => {
-      state.contenlist=[]
+      state.contenlist = [];
       Wrapper.Scan = scan;
       pageCan.PageCur = 1;
       showMd();
@@ -122,7 +124,7 @@ export default {
      * @author: zengbotao@myhexin.com
      */
     const showsize = () => {
-      if(state.stopScroll)return
+      if (state.stopScroll) return;
       pageCan.PageCur = pageCan.PageCur + 1;
       let params = { ...pageCan, ...Wrapper };
       state.loadingContent = true;
@@ -161,9 +163,31 @@ export default {
       state.text = "";
       state.title = "";
     };
+     /**
+     * @description: 监听搜索
+     * @param {*} text
+     * @param {*} title
+     * @return {*}
+     * @author: zengbotao@myhexin.com
+     */
+    const SearchStr = (inputSearch) => {
+        state.searchNUmm = state.searchNUmm + 1;
+        Wrapper.Title=inputSearch
+        pageCan.PageCur=0 //重置当前页
+        state.contenlist=[] //清空列表
+        showMd();
+      };
     onMounted(() => {
-      showMd();
+      Emitter.on("SearchStrhome", SearchStr);
+      if (state.searchNUmm > 0) {
+        return;
+      } else {
+        showMd();
+      }
     });
+    onUnmounted(()=>{
+      Emitter.off("SearchStrhome")
+    })
     return {
       ...toRefs(state),
       exIconList,
@@ -174,6 +198,8 @@ export default {
       Wrapper,
       showsize,
       selectScan,
+      Emitter,
+      SearchStr
     };
   },
 };
@@ -192,14 +218,14 @@ export default {
   }
 
   .content-main {
-    margin: 0 14rem  0 0;
+    margin: 0 14rem 0 0;
     padding: 0.75rem 0 0 0rem;
     width: calc(100% - 16rem);
     .reee {
       height: 90rem;
       overflow: auto;
     }
-    .contentt{
+    .contentt {
       // height: 8.73rem;
     }
     .title {
