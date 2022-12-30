@@ -69,7 +69,7 @@ export default {
   display: flex;
   width: 100%;
   flex-direction: row;
-  border-bottom: 1px solid #ececee;
+  border-bottom: .0625rem solid #ececee;
   .neirong {
     padding: 0.5rem 0.75rem;
     display: flex;

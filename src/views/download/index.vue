@@ -138,7 +138,7 @@ export default {
       max-height: 10rem;
       margin: 2rem;
       padding: 1rem;
-      border-radius: 6px;
+      border-radius: .375rem;
       background-color: rgb(245, 221, 163);
       .title {
         display: block;

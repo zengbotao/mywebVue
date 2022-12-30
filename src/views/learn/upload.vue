@@ -9,7 +9,7 @@
   <div>
     <el-form
       :model="form"
-      label-width="120px"
+      label-width="7.5rem"
       class="form"
       :rules="rules"
       ref="ruleFormRef"

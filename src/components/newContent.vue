@@ -7,16 +7,15 @@
 -->
 <template>
   <div class="tips-main">
-    <div class="tips-title">{{ title }}</div>
+    <div class="tips-title">最新内容</div>
     <div class="tips-neirong">
       <div
         class="label"
-        v-for="(item, index) in scanlist"
+        v-for="(item, index) in textList"
         :key="index"
-        @click="selectOne(item.value)"
-        :class="active === item.value ? 'activeClass' : ''"
+        @click="selectOne(item)"
       >
-        {{ item.label }}
+        {{ index +1}}. {{ item.title }}
       </div>
     </div>
   </div>
@@ -24,15 +23,9 @@
 
 <script>
 import { reactive, toRefs, onMounted, computed } from "vue";
-import { scanall, qianlist, houlist } from "@/common/js/globleData";
+import { getMdbyID } from "@/api/home";
 export default {
   props: {
-    title: {
-      type: String,
-      default() {
-        return "筛选标签";
-      },
-    },
     textList: {
       type: Array,
       default() {
@@ -47,18 +40,18 @@ export default {
   },
   setup(props, context) {
     const state = reactive({
-      scanlist: scanall,
+      scanlist: props.textList,
       title: "文章类型",
-      active: "",
     });
-    const selectOne = (scan) => {
-      if (state.active === scan) {
-        state.active = "";
-        context.emit("selectScan", state.active);
-      } else {
-        state.active = scan;
-        context.emit("selectScan", state.active);
-      }
+    const selectOne = (items) => {
+       getMdbyID({id:items.id})
+        .then((item) => {
+          console.log(item.data.data.text);   
+          context.emit("showContent", JSON.parse(item.data.data.text), items.title);
+        })
+        .catch((err) => {
+          showMsg("获取内容失败","error");
+        });
     };
     return {
       ...toRefs(state),
@@ -94,21 +87,10 @@ export default {
     line-height: 1.9375rem;
     color: #555666;
     text-align: left;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     .label {
-      align-items: center;
-      padding: 0.1875rem;
-      background-color: @GorangeQ;
-      border: @GorangeS 0.0625rem solid;
-      margin: 0.2875rem 0.4rem;
-      width: 10rem;
-      font-size: 0.75rem;
-      text-align: center;
+      margin-left: 0.5rem;
       &:hover {
-        background-color: @GorangeS;
-        color: #fff;
+        color: @GorangeS;
         cursor: pointer;
       }
     }
@@ -123,8 +105,5 @@ export default {
     font-size: 1rem;
   }
 }
-.activeClass {
-  background-color: @GorangeS !important;
-  color: #fff;
-}
+
 </style>

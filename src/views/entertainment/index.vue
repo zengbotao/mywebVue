@@ -236,7 +236,7 @@ export default {
       font-family: PingFang SC, Hiragino Sans GB, Microsoft YaHei,
         WenQuanYi Micro Hei, sans-serif;
       /deep/ .md-editor-content .md-editor-preview {
-        font-size: 15px;
+        font-size: .9375rem;
       }
       /deep/ img {
         width: 75%;

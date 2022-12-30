@@ -18,9 +18,9 @@
       >
         娱乐
       </router-link> -->
-      <!-- <router-link class="header-link" active-class="active" to="/nomal/learn">
+      <router-link class="header-link" active-class="active" to="/nomal/learn">
         发布
-      </router-link> -->
+      </router-link>
       <router-link
         class="header-link"
         active-class="active"
@@ -34,6 +34,7 @@
       size="small"
       placeholder="请输入...."
       class="input-with-select inputs"
+      clearable 
     >
 
       <template #append>
@@ -86,9 +87,10 @@ export default {
   }
   .inputs {
     margin: 0.9375rem 0.9375rem 0.9375rem 9.375rem;
-    width: 37.5rem;
+    width: 27.5rem;
     position: relative;
     top: 0.1875rem;
+    right: -3rem;
   }
   .header-home {
     flex: 1;

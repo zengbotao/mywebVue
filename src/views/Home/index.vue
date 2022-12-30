@@ -47,6 +47,7 @@
       <el-backtop :bottom="100"> </el-backtop>
     </div>
     <tips-scan class="silder-right" @selectScan="selectScan" />
+    <newContent class="new-right" :textList="newList" @showContent="showContent"/>
   </div>
 </template>
 
@@ -55,18 +56,20 @@ import { reactive, toRefs, onMounted, computed, ref,onUnmounted} from "vue";
 import contentNoPic from "./contentNoPic.vue";
 import Tips from "@/components/silder/tips.vue";
 import tipsScan from "@/components/tipsScan";
+import newContent from '@/components/newContent'
 import MdEditor from "md-editor-v3";
 import "md-editor-v3/lib/style.css";
-import { pageMd } from "@/api/home";
+import { pageMd,pagenew } from "@/api/home";
 import useEmitter from "@/utils/eventBus";
 export default {
-  components: { contentNoPic, Tips, MdEditor, tipsScan },
+  components: { contentNoPic, Tips, MdEditor, tipsScan, newContent},
   setup() {
     const state = reactive({
       contenlist: [],
       display: false,
       text: "",
       title: "",
+      newList:[],
       searchNUmm: 0,
       loading: false, //加载页面n
       loadingContent: false, //加载列表
@@ -101,6 +104,22 @@ export default {
           state.contenlist = item.data.data.data;
           state.loading = false;
           pageCan.PageTotal = item.data.data.page.pageTotal;
+          state.display =false
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+     /**
+     * @description: 最新内容
+     * @return {*}
+     * @author: zengbotao@myhexin.com
+     */
+    const showNewContent = () => {
+      pagenew()
+        .then((item) => {
+          console.log(item.data.data)
+          state.newList=item.data.data
         })
         .catch((err) => {
           console.log(err);
@@ -147,7 +166,7 @@ export default {
      * @author: zengbotao@myhexin.com
      */
     const showContent = (text, title) => {
-      state.display = !state.display;
+      state.display = true;
       state.text = text;
       state.title = title;
     };
@@ -159,7 +178,7 @@ export default {
      * @author: zengbotao@myhexin.com
      */
     const backlist = (text, title) => {
-      state.display = !state.display;
+      state.display = false;
       state.text = "";
       state.title = "";
     };
@@ -184,6 +203,7 @@ export default {
       } else {
         showMd();
       }
+      showNewContent()
     });
     onUnmounted(()=>{
       Emitter.off("SearchStrhome")
@@ -199,7 +219,8 @@ export default {
       showsize,
       selectScan,
       Emitter,
-      SearchStr
+      SearchStr,
+      showNewContent
     };
   },
 };
@@ -213,14 +234,18 @@ export default {
   flex-direction: row;
   .silder-right {
     position: fixed;
-    right: 14rem;
+    right: 13rem;
     top: 3.875rem;
   }
-
+  .new-right{
+    position: fixed;
+    right: 13rem;
+    top: 28rem;
+  }
   .content-main {
-    margin: 0 14rem 0 0;
+    margin: 0 20rem 0 0;
     padding: 0.75rem 0 0 0rem;
-    width: calc(100% - 16rem);
+    width: calc(100% - 20rem);
     .reee {
       height: 90rem;
       overflow: auto;
@@ -258,7 +283,7 @@ export default {
       font-family: PingFang SC, Hiragino Sans GB, Microsoft YaHei,
         WenQuanYi Micro Hei, sans-serif;
       /deep/ .md-editor-content .md-editor-preview {
-        font-size: 15px;
+        font-size: .9375rem;
       }
       /deep/ img {
         width: 75%;
