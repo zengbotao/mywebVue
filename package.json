@@ -14,11 +14,7 @@
       "git add"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint"
-    }
-  },
+
   "config": {
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
@@ -26,6 +22,8 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
+    "@typescript-eslint/eslint-plugin": "^7.6.0",
+    "@typescript-eslint/parser": "^7.6.0",
     "@vitejs/plugin-legacy": "^2.3.1",
     "axios": "^1.2.1",
     "dayjs": "^1.11.7",
@@ -52,7 +50,7 @@
     "babel-eslint": "^10.1.0",
     "babel-plugin-import": "^1.13.1",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0-0",
+    "eslint-plugin-vue": "^9.24.1",
     "file-loader": "^6.2.0",
     "husky": "^9.0.11",
     "less": "^3.12.2",
