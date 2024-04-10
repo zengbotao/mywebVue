@@ -6,16 +6,12 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "vue-cli-service lint"
-  }, 
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS" 
-    }
-},
+  },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
     "@vitejs/plugin-legacy": "^2.3.1",
     "axios": "^1.2.1",
+    "commitizen": "^4.3.0",
     "dayjs": "^1.11.7",
     "element-plus": "^2.2.25",
     "img-vuer3": "^1.0.2",
