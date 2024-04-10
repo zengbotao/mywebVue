@@ -5,6 +5,7 @@
     "dev": "vite",
     "build": "vite build",
     "prepare": "husky install",
+    "commit":"commit.sh",
     "preview": "vite preview",
     "lint": "vue-cli-service lint"
   },
@@ -21,7 +22,10 @@
   },
   "config": {
     "commitizen": {
-      "path": "./.cz-config.js"
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": ".cz-config.cjs"
     }
   },
   "dependencies": {
