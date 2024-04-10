@@ -5,9 +5,13 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "commitlint": "commitlint --config commitlint.config.cjs -e -V",
     "lint": "vue-cli-service lint"
   }, 
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS" 
+    }
+},
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
     "@vitejs/plugin-legacy": "^2.3.1",
