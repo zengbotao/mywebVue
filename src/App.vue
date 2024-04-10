@@ -10,7 +10,7 @@ import { useRouter } from "vue-router";
 export default {
   setup() {
     const state = reactive({
-      transitionName: "slide-left",
+      transitionName:   "slide-left",
       activeIndex: 1,
       layout:true,
       input3:"",
