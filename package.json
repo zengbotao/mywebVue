@@ -9,6 +9,7 @@
   },
   "husky": {
     "hooks": {
+      "pre-commit": "node heihei.js", 
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },  
