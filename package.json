@@ -7,6 +7,11 @@
     "preview": "vite preview",
     "lint": "vue-cli-service lint"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },  
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
     "@vitejs/plugin-legacy": "^2.3.1",
@@ -44,11 +49,6 @@
     "unplugin-vue-components": "^0.22.11",
     "vite": "^3.1.8",
     "vite-plugin-require-transform": "^1.0.4"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   },
   "license": "MIT",
   "browserslist": [
