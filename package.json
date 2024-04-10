@@ -14,7 +14,11 @@
       "git add"
     ]
   },
-
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PRAMAS"
+    }
+  },
   "config": {
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
