@@ -4,14 +4,25 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "prepare": "husky install",
     "preview": "vite preview",
     "lint": "vue-cli-service lint"
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
     "@vitejs/plugin-legacy": "^2.3.1",
     "axios": "^1.2.1",
-    "commitizen": "^4.3.0",
     "dayjs": "^1.11.7",
     "element-plus": "^2.2.25",
     "img-vuer3": "^1.0.2",
