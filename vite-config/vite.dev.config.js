@@ -3,10 +3,10 @@
  * @Autor: zengbotao@myhexin.com
  * @Date: 2022-11-28 16:20:20
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2024-04-10 14:44:22
+ * @LastEditTime: 2024-04-10 14:45:32
  */
 import { defineConfig } from "vite";
-// npx vite preview  打包后预览212
+// npx vite preview  打包后预览2
 export default defineConfig({
   server: {
     proxy: {
