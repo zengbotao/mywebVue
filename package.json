@@ -35,12 +35,18 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0-0",
     "file-loader": "^6.2.0",
+    "husky": "^9.0.11",
     "less": "^3.12.2",
     "less-loader": "^7.0.2",
     "unplugin-auto-import": "^0.12.0",
     "unplugin-vue-components": "^0.22.11",
     "vite": "^3.1.8",
     "vite-plugin-require-transform": "^1.0.4"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "license": "MIT",
   "browserslist": [
